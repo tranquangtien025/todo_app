@@ -3,43 +3,45 @@ import { GiTomato } from "react-icons/gi"
 import { RiHomeHeartLine } from "react-icons/ri"
 import { HiOutlineInformationCircle } from "react-icons/hi"
 import { StyledCursorPointer, StyledHomeHeart, StyledInformationCircle, StyledNumber, StyledNumberStarRating, StyledRating, StyledRatingInfos, StyledRatingInfosWrap, StyledStar, StyledStarRating, StyledTextRating, StyledTomato } from "./styles"
+import NumberFormat from "react-number-format"
 
-export const Rating = () => {
+export const Rating = (props: any) => {
   return (
     <StyledRating>
       <StyledRatingInfosWrap>
         <StyledRatingInfos>
+          {props.starRating && 
           <StyledStarRating>
             <StyledNumberStarRating>
               <StyledNumber>
-                4,2
+                <NumberFormat value={props.starRating} decimalScale={1} fixedDecimalScale displayType={'text'} />
                 <StyledStar>
                   <GoStar />
                 </StyledStar>
               </StyledNumber>
             </StyledNumberStarRating>
             <StyledTextRating>366 bài đánh giá</StyledTextRating>
-          </StyledStarRating>
-          <StyledStarRating>
+          </StyledStarRating>}
+          {props.tomatometer && <StyledStarRating>
             <StyledNumberStarRating>
               <span>
                 <StyledTomato>
                   <GiTomato />
                 </StyledTomato>
-                100%
+                {props.tomatometer}%
               </span>
             </StyledNumberStarRating>
             <StyledTextRating>Tomatometer</StyledTextRating>
-          </StyledStarRating>
-          <StyledStarRating>
+          </StyledStarRating>}
+          {props.rating && <StyledStarRating>
             <StyledNumberStarRating>
               <span>
-                <span>R</span>
+                <span>{props.rating}</span>
               </span>
             </StyledNumberStarRating>
             <StyledTextRating>Mức phân loại</StyledTextRating>
-          </StyledStarRating>
-          <StyledStarRating>
+          </StyledStarRating>}
+          {props.isQualified && <StyledStarRating>
             <StyledNumberStarRating>
               <div>
                 <StyledHomeHeart>
@@ -55,7 +57,7 @@ export const Rating = () => {
                 </StyledInformationCircle>
               </StyledCursorPointer>
             </StyledTextRating>
-          </StyledStarRating>
+          </StyledStarRating>}
         </StyledRatingInfos>
       </StyledRatingInfosWrap>
     </StyledRating>

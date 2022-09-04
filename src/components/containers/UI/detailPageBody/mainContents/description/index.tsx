@@ -2,13 +2,13 @@ import { DescriptionContent } from "./descriptionContent"
 import { DescriptionTitle } from "./descriptionTitle"
 import { StyledDescription } from "./styles"
 
-export const Description = () => {
+export const Description = (props: any) => {
   return (
     <div>
       <div>
         <StyledDescription>
           <DescriptionTitle title="Thông tin về bộ phim này" />
-          <DescriptionContent />
+          <DescriptionContent description={props.description} />
         </StyledDescription>
       </div>
     </div>

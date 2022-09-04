@@ -3,10 +3,10 @@ import { MakeComment } from "./makeComment"
 import { Rating } from "./rating"
 import { StyledMainContents } from "./styles"
 
-export const MainContents = () => {
+export const MainContents = (props: any) => {
   return (
     <StyledMainContents>
-      <Description />
+      <Description description={props.description} />
       <Rating />
       <MakeComment />
     </StyledMainContents>
