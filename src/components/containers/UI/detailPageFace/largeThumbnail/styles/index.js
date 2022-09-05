@@ -26,7 +26,7 @@ export const StyledImageDiv = styled.div`
   @media screen and (min-width: 840px) {
     background: linear-gradient(to right,rgb(32,33,36) 0,rgba(0,0,0,0) 56%),linear-gradient(to top,rgb(32,33,36) 0,rgba(0,0,0,0) 56%);
   }
-
+  background: linear-gradient(to top,rgb(32,33,36) 0,rgba(0,0,0,0) 56%);
   bottom: 0;
   left: 0;
   right: 0;
