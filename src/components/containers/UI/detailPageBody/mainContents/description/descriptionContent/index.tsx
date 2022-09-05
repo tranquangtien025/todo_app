@@ -7,7 +7,7 @@ export const DescriptionContent = (props: any) => {
       <StyledContent2>
         {props.description}
       </StyledContent2>
-      <Category />
+      <Category category={props.category} />
     </StyledContent>
   )
 }

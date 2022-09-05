@@ -6,7 +6,7 @@ import { HomePageFooter } from "../UI/homePageFooter"
 import { HomePageHeader } from "../UI/homePageHeader"
 import { HomePageNeck } from "../UI/homePageNeck"
 
-export const Home = () => {
+export const Home: React.FC = () => {
 
   const [moviesList, setMoviesList] = useState<Movie[]>([])
   const [filteredList, setFilteredList] = useState<Movie[]>([])

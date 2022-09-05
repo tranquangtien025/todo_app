@@ -1,6 +1,7 @@
 import styled from "styled-components"
 
 export const StyledCategory = styled.div`
+  cursor: pointer;
   display: flex;
   flex-wrap: wrap;
   gap: 16px 12px;

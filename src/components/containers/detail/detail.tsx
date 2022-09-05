@@ -9,14 +9,16 @@ import { getMovieDetail } from "../../../utils/axios"
 export const Detail = () => {
   const navigate = useNavigate();
   const params = useLocation();
+  const id = params.pathname.split('/')[2]
   const [movieDetail, setMovieDetail] = useState<Movie>();
-  
+
   useEffect(() => {
-    getData()
-  }, [])
+    if(id){
+      getData()
+    }
+  }, [id])
 
   const getData = async () => {
-    const id = params.pathname.split('/')[2]
     try {
       const { data } = await getMovieDetail(id)
       setMovieDetail(data)
@@ -27,8 +29,14 @@ export const Detail = () => {
 
   return (
     <div>
-      <DetailPageFace movieDetail={movieDetail} />
-      <DetailPageBody movieDetail={movieDetail} />
+      {movieDetail &&
+        (
+          <div>
+            <DetailPageFace movieDetail={movieDetail} />
+            <DetailPageBody movieDetail={movieDetail} />
+          </div>
+        )
+      }
       <HomePageFooter />
     </div>
   )

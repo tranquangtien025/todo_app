@@ -6,7 +6,9 @@ import { StyledMainContents } from "./styles"
 export const MainContents = (props: any) => {
   return (
     <StyledMainContents>
-      <Description description={props.description} />
+      <Description
+       description={props.movieDetail.description}
+       category={props.movieDetail.category} />
       <Rating />
       <MakeComment />
     </StyledMainContents>

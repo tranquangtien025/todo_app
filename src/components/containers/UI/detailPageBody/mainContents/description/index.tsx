@@ -8,7 +8,9 @@ export const Description = (props: any) => {
       <div>
         <StyledDescription>
           <DescriptionTitle title="Thông tin về bộ phim này" />
-          <DescriptionContent description={props.description} />
+          <DescriptionContent 
+          description={props.description}
+          category={props.category} />
         </StyledDescription>
       </div>
     </div>
